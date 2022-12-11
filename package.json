@@ -1,0 +1,78 @@
+{
+  "name": "rio-component-creator",
+  "displayName": "RIO Component Creator",
+  "publisher": "ias-vscode-ext",
+  "description": "",
+  "version": "0.0.1",
+    "icon": "assets/rr_logo.png",
+    "author": {
+        "name": "Arth K. Gajjar",
+        "email": "iarthstar@gmail.com",
+        "url": "https://github.com/iarthstar"
+    },
+    "keywords": [
+        "vscode",
+        "extension",
+        "react",
+        "component",
+        "rapyuta",
+        "robotics",
+        "io",
+        "console"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/iarthstar/vsce-rio-component.git"
+    },
+    "license": "MIT",
+    "private": false,
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:rio-component-creator.helloWorld"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+    {
+      "command": "rio-component-creator.create-component",
+      "title": "Create RIO Component"
+    }
+  ],
+  "menus": {
+    "commandPalette": [
+      {
+        "command": "rio-component-creator.create-component",
+        "when": "explorerResourceIsFolder"
+      }
+    ],
+    "explorer/context": [
+      {
+        "command": "rio-component-creator.create-component",
+        "when": "explorerResourceIsFolder",
+        "group": "EditorConfig@1"
+      }
+    ]
+  }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "yarn run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "eslint": "^8.28.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "typescript": "^4.9.3",
+    "@vscode/test-electron": "^2.2.0"
+  }
+}
